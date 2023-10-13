@@ -13,3 +13,5 @@
 ![](/statefull.png)
 # Kubernetes arquitetura
 ## Node processes
+![](/nodeprocesses.png)
+
