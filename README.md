@@ -14,4 +14,19 @@
 # Kubernetes arquitetura
 ## Node processes
 ![](/nodeprocesses.png)
+## Master nodes
+Escalonar pod
+Monitorar
+Reestartar pod
+Novo node
+## Processos do master node
+### Api server
+![](/apiserver.png)
+### Scheduler
+![](/scheduler.png)
+![](/scheduler2.png)
+### Controller manager
+![](/controllermanager.png)
+### ETCD
+![](/etcd.png)
 
