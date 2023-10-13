@@ -12,3 +12,4 @@
 ## O que é statefull?
 ![](/statefull.png)
 # Kubernetes arquitetura
+## Node processes
