@@ -3,6 +3,8 @@
 Um cluster é um conjunto de máquinas, que pode ser do tipo node ou master.
 
 ![](/arquiteturak8.png)
+
+![](/arquiteturak82.png)
 ## O que é um pod?
 ![](/pod.png)
 ## O que é um service?
