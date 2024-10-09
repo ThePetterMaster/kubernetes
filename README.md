@@ -28,6 +28,18 @@ Editar um pod:
 
 `kubectl edit pod nginx-pod`
 
+Criando pod de maneira declarativa:
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: primeiro-pod-declarativo
+spec:
+  containers:
+    - name: container-pod-1
+      image: nginx:latest
+```
 ## O que é um service?
 ![](/service.png)
 ## O que é Config Map?
