@@ -48,6 +48,44 @@ Executando o yml:
 
 ## O que é um service?
 ![](/service2.png)
+
+### Cluster IP
+
+Define ip fixo para comunicações internas
+
+pod-2.yamal
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-2
+  labels:
+    app: segundo-pod
+spec:
+  containers:
+    - name: container-pod-2
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+```
+
+svc-pod-2.yamal
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-pod-2
+spec:
+  type: ClusterIP
+  selector:
+    app: segundo-pod
+  ports:
+    - port: 9000
+      targetPort: 80
+```
+
+### Tipos de services
+![](/servicetipos.png)
 ## O que é Config Map?
 ![](/configmap.png)
 ## O que são volumes?
