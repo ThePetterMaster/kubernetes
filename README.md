@@ -6,7 +6,28 @@ Um cluster é um conjunto de máquinas, que pode ser do tipo node ou master.
 
 ![](/arquiteturak82.png)
 ## O que é um pod?
-![](/pod.png)
+Menor abstração do k8, encapsular um container.
+![](/pod2.png)
+Criando um pod:
+
+`kubectl run nginx-pod --image=nginx:latest`
+
+Listar todos os pods:
+
+`kubectl get pods`
+
+Listar e acompanhar todos os pods em tempo real suas alterações:
+
+`kubectl get pods --watch`
+
+Informações de um pod:
+
+`kubectl describe pod nginx-pod`
+
+Editar um pod:
+
+`kubectl edit pod nginx-pod`
+
 ## O que é um service?
 ![](/service.png)
 ## O que é Config Map?
