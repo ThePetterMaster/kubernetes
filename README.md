@@ -48,10 +48,11 @@ Executando o yml:
 
 ## O que é um service?
 ![](/service2.png)
+### Tipos de services
+![](/servicetipos.png)
+#### Cluster IP
 
-### Cluster IP
-
-Define ip fixo para comunicações internas
+Define ip fixo para comunicações internas do cluster.
 
 pod-2.yamal
 ```
@@ -84,8 +85,16 @@ spec:
       targetPort: 80
 ```
 
-### Tipos de services
-![](/servicetipos.png)
+Listar services:
+````
+kubectl get service
+````
+
+````
+kubectl get svc
+````
+
+
 ## O que é Config Map?
 ![](/configmap.png)
 ## O que são volumes?
