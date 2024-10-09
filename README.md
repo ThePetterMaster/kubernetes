@@ -47,7 +47,7 @@ Executando o yml:
 
 
 ## O que é um service?
-![](/service.png)
+![](/service2.png)
 ## O que é Config Map?
 ![](/configmap.png)
 ## O que são volumes?
