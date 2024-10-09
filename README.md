@@ -94,6 +94,16 @@ kubectl get service
 kubectl get svc
 ````
 
+Testar a comunicação:
+
+````
+kubeclt exec -it pod-1 --bash
+````
+
+
+````
+curl ip-do-service
+````
 
 ## O que é Config Map?
 ![](/configmap.png)
