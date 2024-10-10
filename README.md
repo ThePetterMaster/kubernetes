@@ -156,7 +156,47 @@ spec:
     app: primeiro-pod
 ````
 ## O que é Config Map?
+
+Configuração de variáveis de ambientes em um yaml separado.
+
 ![](/configmap.png)
+
+````
+kubectl get configmap
+````
+
+````
+kubectl  describe configmap NOME-CONFIGMAP
+````
+
+````
+apiVersion: v1
+kind: Pod
+metadata:
+  name: db-noticias
+  labels:
+    app: db-noticias
+spec:
+  containers:
+    - name: db-noticias-container
+      image: aluracursos/mysql-db:1
+      ports:
+        - containerPort: 3306
+      envFrom:
+        - configMapRef:
+            name: db-configmap
+````
+
+````
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-configmap
+data:
+  MYSQL_ROOT_PASSWORD: q1w2e3r4
+  MYSQL_DATABASE: empresa
+  MYSQL_PASSWORD: q1w2e3r4
+````
 ## O que são volumes?
 ![](/volumes.png)
 ## O que é deployment?
