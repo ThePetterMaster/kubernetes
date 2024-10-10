@@ -105,6 +105,56 @@ kubeclt exec -it pod-1 --bash
 curl ip-do-service
 ````
 
+### Node port
+Se comunica fora do cluster.
+
+
+svc-pod-1.yamal
+````
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-pod-1
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      #targetPort: 80
+      nodePort: 30000
+  selector:
+    app: primeiro-pod
+````
+
+pod-1.yamal
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-1
+  labels:
+    app: primeiro-pod
+spec:
+  containers:
+    - name: container-pod-1
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+```
+
+### Load balancer
+````
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-pod-loadbalancer-1
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      nodePort: 30000
+  selector:
+    app: primeiro-pod
+````
 ## O que é Config Map?
 ![](/configmap.png)
 ## O que são volumes?
