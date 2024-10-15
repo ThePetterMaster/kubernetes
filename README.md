@@ -197,6 +197,83 @@ data:
   MYSQL_DATABASE: empresa
   MYSQL_PASSWORD: q1w2e3r4
 ````
+## O que é Replica set?
+![](/replicaset2.png)
+Aumentar a quantidade de um mesmo pod.
+
+Serve para dar dsiponibilidade ou balanceamento de carga.
+
+````
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: portal-noticias-deployment
+spec:
+  template:
+    metadata:
+      name: portal-noticias
+      labels:
+        app: portal-noticias
+    spec:
+      containers:
+        - name: portal-noticias-container
+          image: aluracursos/portal-noticias:1
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: portal-configmap
+  replicas: 3
+  selector:
+    matchLabels:
+      app: portal-noticias
+````
+
+Irá aparecer 3 pod:
+````
+kubectl get pods
+````
+
+Ao deletar algum pod do replica set, será criado outro.
+
+Consultar replica sets:
+
+````
+kubectl get rs
+````
+ou
+````
+kubectl get replicasets
+````
+
+
+## O que é Deployment?
+![](/deployment2.png)
+````
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portal-noticias-deployment
+spec:
+  template:
+    metadata:
+      name: portal-noticias
+      labels:
+        app: portal-noticias
+    spec:
+      containers:
+        - name: portal-noticias-container
+          image: aluracursos/portal-noticias:1
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: portal-configmap
+  replicas: 3
+  selector:
+    matchLabels:
+      app: portal-noticias
+````
 ## O que são volumes?
 ![](/volumes.png)
 ## O que é deployment?
