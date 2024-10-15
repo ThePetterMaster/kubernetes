@@ -249,6 +249,8 @@ kubectl get replicasets
 
 ## O que é Deployment?
 ![](/deployment2.png)
+
+Uma camada a mais de um replica set. Permite o controle das versões.
 ````
 apiVersion: apps/v1
 kind: Deployment
@@ -274,6 +276,10 @@ spec:
     matchLabels:
       app: portal-noticias
 ````
+Ao criar um deployment necessariamente cria um replica set.
+
+
+
 ## O que são volumes?
 ![](/volumes.png)
 ## O que é deployment?
