@@ -323,8 +323,63 @@ spec:
         path: /C/Users/Daniel/Desktop/uma-pasta-no-host
         type: Directory
 ````
-## O que é deployment?
-![](/deployment.png)
+Verificar o arquivo no pod:
+````
+kubectl exec -it pod-volume --container nome-do-container -- bash
+````
+
+````
+cd ./pasta-de-arquivos ls
+````
+## Persistence volumes e persistence volumes claims
+Dados persistidos em cloud.
+````
+apiVersion: v1
+kind: PersistVolume
+metadata:
+    name: pv-1
+spec:
+    capacity:
+        storage: 10Gi
+    accessModes:
+        - ReadWriteOnce
+    gcePersistentDisk:
+        pdName: pv-disk
+    storageClassName: standard
+````
+
+````
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+    name: pvc-1
+spec:
+    accessModes:
+        - ReadWriteOnde
+    resources:
+        requests:
+            storage: 10Gi
+    storageClassName: standard
+````
+
+````
+apiVersion: v1
+kind: Pod
+metadata:
+    name: pod-pv
+spec:
+    containers:
+        - name: nginx-container
+            image: nginx-latest
+            volumeMounts:
+                - mountPath: /volume-dentro-do-container
+                name: primeiro-pv
+    volumes:
+        - name: primeiro-pv
+            hostPath:
+                persistentVolumeClaim:
+                    claimName: pvc-1
+````
 ## O que é statefull?
 ![](/statefull.png)
 # Kubernetes arquitetura
