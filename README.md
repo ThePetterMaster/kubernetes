@@ -302,7 +302,7 @@ kubectl rollout undo deployment nome-do-deployment --to-revision=2
 
 ## O que são volumes?
 Maneira de persistir os dados.
-![](/volumes2.png)
+![](/volume2.png)
 ## O que é deployment?
 ![](/deployment.png)
 ## O que é statefull?
