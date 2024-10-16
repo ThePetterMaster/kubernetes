@@ -333,6 +333,10 @@ cd ./pasta-de-arquivos ls
 ````
 ## Persistence volumes e persistence volumes claims
 Dados persistidos em cloud.
+
+![](/aula3_video1_imagem1.webp)
+
+
 ````
 apiVersion: v1
 kind: PersistVolume
