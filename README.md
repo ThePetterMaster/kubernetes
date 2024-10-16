@@ -278,7 +278,27 @@ spec:
 ````
 Ao criar um deployment necessariamente cria um replica set.
 
+Consultar deployments:
 
+````
+kubectl get deployments
+````
+
+Consultar o histórico das mudanças:
+````
+kubectl rollout history deployment nome-do-deployment
+````
+
+Alterar o nome da mudança:
+
+````
+kubectl annotate deployment nome-do-deployment kubernetes.io/change-cause="Uma mensagem criada"
+````
+
+Mudar para uma revision específica( no exemplo a segunda):
+````
+kubectl rollout undo deployment nome-do-deployment --to-revision=2
+```` 
 
 ## O que são volumes?
 ![](/volumes.png)
