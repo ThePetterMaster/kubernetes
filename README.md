@@ -302,7 +302,27 @@ kubectl rollout undo deployment nome-do-deployment --to-revision=2
 
 ## O que são volumes?
 Maneira de persistir os dados.
+
 ![](/volume2.png)
+
+````
+apiVersion: v1
+kind: Pod
+metadata:
+  name: um-pod-qualquer
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+      volumeMounts:
+        - mountPath: /pasta-de-arquivos
+          name: volume-pod
+  volumes:
+    - name: volume-pod
+      hostPath:
+        path: /C/Users/Daniel/Desktop/uma-pasta-no-host
+        type: Directory
+````
 ## O que é deployment?
 ![](/deployment.png)
 ## O que é statefull?
