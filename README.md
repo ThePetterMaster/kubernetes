@@ -390,6 +390,17 @@ Persistence volumes são criados automaticamente, pod se comunica diretamente co
 
 ![](/StoregeClasses.png)
 
+````
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: slow
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-standard
+  fstype: ext4
+````
+
 ## O que é Statefull set?
 
 Semelhante ao storage classes, porém cada pod tem um identificador de modo que o pod possa ser substituído e ser considerado o mesmo pod.
@@ -434,7 +445,53 @@ spec:
       app: sistema-noticias
   serviceName: svc-sistema-noticias
 ````
+## O que são Liveness Probs e Readiness Probs ?
 
+Liveness Probs: restarta o pod depois de estar com problemas, no exemplo depois de 3 requisições http com status erro.
+
+Readiness Probs: faz o pod não receber requisições depois de estar com problemas, no exemplo depois de 5 requisições http com status erro.
+
+````
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portal-noticias-deployment
+spec:
+  template:
+    metadata:
+      name: portal-noticias
+      labels:
+        app: portal-noticias
+    spec:
+      containers:
+        - name: portal-noticias-container
+          image: aluracursos/portal-noticias:1
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: portal-configmap
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            periodSeconds: 10
+            failureThreshold: 3
+            initialDelaySeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            periodSeconds: 10
+            failureThreshold: 5
+            initialDelaySeconds: 3
+  replicas: 3
+  selector:
+    matchLabels:
+      app: portal-noticias
+````
+
+## O que é Horizontal pod auto scaler?
 
 # Kubernetes arquitetura
 ## Node processes
