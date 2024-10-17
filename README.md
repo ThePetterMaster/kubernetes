@@ -390,8 +390,11 @@ Persistence volumes são criados automaticamente, pod se comunica diretamente co
 
 ![](/StoregeClasses.png)
 
-## O que é statefull?
-![](/statefull.png)
+## O que é Statefull set?
+
+Semelhante ao storage classes, porém cada pod tem um identificador de modo que o pod possa ser substituído e ser considerado o mesmo pod.
+
+
 # Kubernetes arquitetura
 ## Node processes
 ![](/nodeprocesses.png)
