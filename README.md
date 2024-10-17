@@ -384,7 +384,12 @@ spec:
                 persistentVolumeClaim:
                     claimName: pvc-1
 ````
-## Storege Classes 
+## Storage Classes 
+
+Persistence volumes são criados automaticamente, pod se comunica diretamente com o pvc.
+
+![](/StoregeClasses.png)
+
 ## O que é statefull?
 ![](/statefull.png)
 # Kubernetes arquitetura
