@@ -384,6 +384,7 @@ spec:
                 persistentVolumeClaim:
                     claimName: pvc-1
 ````
+## Storege Classes 
 ## O que é statefull?
 ![](/statefull.png)
 # Kubernetes arquitetura
