@@ -567,6 +567,20 @@ spec:
           averageUtilization: 50
 ````
 
+## Servidor de estresse: 
+
+https://cdn3.gnarususercontent.com.br/1916-kubernetes/stress.zip
+
+## Servidor de métricas linux
+
+````
+minikube addons enable metrics-server
+````
+
+## Servidor de métricas no windows
+
+components.yaml
+
 # Kubernetes arquitetura
 ## Node processes
 ![](/nodeprocesses.png)
