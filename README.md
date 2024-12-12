@@ -105,6 +105,12 @@ kubeclt exec -it pod-1 --bash
 curl ip-do-service
 ````
 
+ou pela label
+
+````
+curl http://svc-pod-2
+````
+
 ### Node port
 Se comunica fora do cluster.
 
