@@ -758,9 +758,27 @@ subjects:
   name: metrics-server
   namespace: kube-system
 ````
-## Ingress?
+## Ingress
 
 ![](/Ingress_basico.png)
+
+### Conexão com service
+
+![](/ingress_service.png)
+
+### Múltiplos paths
+
+![](/multiplos_paths.png)
+
+### Múltiplos sub domínios
+
+![](/Multiplos_subdominios.png)
+
+### TLS
+
+![](/ingress_tls.png)
+
+
 # Kubernetes arquitetura
 ## Node processes
 ![](/nodeprocesses.png)
