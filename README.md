@@ -5,6 +5,10 @@ Um cluster é um conjunto de máquinas, que pode ser do tipo node ou master.
 ![](/arquiteturak8.png)
 
 ![](/arquiteturak82.png)
+
+Kubelet - Garantir que os contêineres estejam em execução em cada nó do cluster.
+
+Kube-proxy - Gerencia o tráfego entre os serviços e pods de um cluster.
 ## O que é um pod?
 Menor abstração do k8, encapsular um container.
 ![](/pod2.png)
