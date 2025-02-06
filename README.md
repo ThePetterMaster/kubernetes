@@ -131,11 +131,13 @@ spec:
   type: NodePort
   ports:
     - port: 80
-      #targetPort: 80
-      nodePort: 30000
+      targetPort: 80
+      nodePort: 30000 
   selector:
     app: primeiro-pod
 ````
+Obs: targetPort se não foi definido, será o mesmo do port.
+Obs: nodePort é a porta que será acessada fora do cluster.
 
 pod-1.yamal
 ```
