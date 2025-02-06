@@ -9,6 +9,8 @@ Um cluster é um conjunto de máquinas, que pode ser do tipo node ou master.
 Kubelet - Garantir que os contêineres estejam em execução em cada nó do cluster.
 
 Kube-proxy - Gerencia o tráfego entre os serviços e pods de um cluster.
+
+Etcd é um sistema de armazenamento de chave-valor distribuído, de código aberto, que é usado para configurar, descobrir serviços e coordenar sistemas distribuídos.
 ## O que é um pod?
 Menor abstração do k8, encapsular um container.
 ![](/pod2.png)
@@ -150,6 +152,14 @@ spec:
       ports:
         - containerPort: 80
 ```
+
+Acessando externamente no windows: localhost:3000
+
+Acessando externamente no linux:
+````
+kubectl get nodes -o wide
+````
+Ip em  INTERNAL-IP
 
 ### Load balancer
 ````
