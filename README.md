@@ -758,7 +758,9 @@ subjects:
   name: metrics-server
   namespace: kube-system
 ````
+## Ingress?
 
+![](/Ingress_basico.png)
 # Kubernetes arquitetura
 ## Node processes
 ![](/nodeprocesses.png)
